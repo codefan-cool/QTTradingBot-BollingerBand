@@ -1,0 +1,6 @@
+- Is it possible to "integer * float" ?
+ex : 
+integer n = 5;
+float f = 2.342;
+float res = n * f;
+

@@ -1,0 +1,99 @@
+
+/*
+ * Bollinger Bands consist of an N-period moving average (MA),
+ * an upper band at K times an N-period standard deviation above the moving average (MA + Kσ),
+ * and a lower band at K times an N-period standard deviation below the moving average (MA − Kσ).
+ */
+
+script BollingerBands; // a name of a file must be unique within all the files included to the main script
+
+import Math;
+
+ const k = 2, n = 20;
+
+// simple moving average
+float[] simple_moving_average (integer limit, float[] input_price_array) {
+  float running_total = 0.0;
+  float output_price_array[];
+
+  // populate initial values in output_price_array at index 0 - limit to null
+  output_price_array[0] = 0.0;
+  for (integer i = 0; i < limit; i++) {
+    output_price_array >> 0.0;
+  } 
+
+  for (integer i = limit; i < sizeof(input_price_array); i++) {
+    for (integer j = i-limit; j < i; j++) {
+      running_total += input_price_array[j];
+    }
+    output_price_array >> (running_total / toFloat(limit))
+    running_total = 0.0;
+  }
+  return output_price_array;
+}
+
+
+float calc_mean_of_period (integer periodStart, integer periodEnd, float[] input_price_array) {
+  float running_total = 0.0;
+  for (integer i = periodStart; i < periodEnd; i++) {
+    running_total += input_price_array[i]
+  }
+  return running_total / toFloat(period.end-period.start);   // warnning : type case needed
+}
+
+// standard deviation
+float stdev = (integer limit, float[] input_price_array) {
+  float output_stdev_array[];
+  for (integer i = 0; i < limit; i++) {
+    output_stdev_array >> 0.0;
+  } 
+
+  for (integer i = limit; i < sizeof(input_price_array); i++) {
+    float mean = calc_mean_of_period(i-limit, i, input_price_array);
+
+    // find the sum of the squared differences
+    float squared_differences_sum = 0.0;
+    for (integer ii = i-limit; ii < i; ii++) {
+      squared_differences_sum += pow(input_price_array[ii] - mean, 2);
+    }
+    // take the mean of the squared differences
+    let mean_of_squared_differences = squared_differences_sum / toFloat(limit);  // warnning : type cast needed
+    output_stdev_array[i] = sqrt(mean_of_squared_differences);
+  }
+  return output_stdev_array;
+}
+
+float[] calc_bollinger_upper_bands = (float[] input_price_array, float[] sma, float[] stdev_arr, integer limit) {
+  // bollinger_bands
+  float upperBands[];
+
+  for (integer x = 0; x < sizeof(input_price_array); x++) {
+    if (x < limit) {
+      upperBands >> 0.0
+    } else {
+      upperBands >> (sma[x] + (k*stdev_arr[x]))
+    }
+  }
+  return upperBands
+}
+
+float[] calc_bollinger_lower_bands = (float[] input_price_array, float[] sma, float[] stdev_arr, integer limit) {
+  // bollinger_bands
+  float lowerBands[];
+
+  for (integer x = 0; x < sizeof(input_price_array); x++) {
+    if (x < limit) {
+      lowerBands >> 0.0;
+    } else {
+      lowerBands >> (sma[x] - (k*stdev_arr[x]));
+    }
+  }
+  return lowerBands
+}
+
+float input_price_array[] = {1.0, 1.1, 1.2, 1.1, 1.5, 1.9, 2.4, 2.7, 2.9, 3.2, 3.5, 3.7, 3.9, 5.0, 3.2, 2.2, 2.3, 2.5, 2.8, 2.9, 3.5, 4.4, 4.3, 4.2, 3.7, 3.5, 4.2, 4.5, 4.8, 5.2, 5.5, 5.7};
+
+float sma[] = simple_moving_average(n, input_price_array);
+float stdev_arr[] = stdev(n, input_price_array)
+float bollinger_upper_bands[] = calc_bollinger_upper_bands(input_price_array, sma, stdev_arr, n)
+float bollinger_lower_bands[] = calc_bollinger_lower_bands(input_price_array, sma, stdev_arr, n)

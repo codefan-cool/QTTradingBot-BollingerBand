@@ -8,8 +8,10 @@
 script BollingerBands; // a name of a file must be unique within all the files included to the main script
 
 import Math;
+import IO;
 
- const k = 2, n = 20;
+ float k = 2.0;
+ integer n = 20;
 
 // simple moving average
 float[] simpleMovingAverage (integer limit, float[] inputPriceArray) {
@@ -18,17 +20,18 @@ float[] simpleMovingAverage (integer limit, float[] inputPriceArray) {
 
   // populate initial values in outputPriceArray at index 0 - limit to null
   outputPriceArray[0] = 0.0;
-  for (integer i = 0; i < limit; i++) {
-    outputPriceArray >> 0.0;
-  } 
-
-  for (integer i = limit; i < sizeof(inputPriceArray); i++) {
-    for (integer j = i-limit; j < i; j++) {
-      runningTotal += inputPriceArray[j];
-    }
-    outputPriceArray >> (runningTotal / toFloat(limit))
-    runningTotal = 0.0;
-  }
+  // for (integer i = 0; i < limit; i++) {
+  //   outputPriceArray >> 0.0;
+  // } 
+  print(toString(sizeof(inputPriceArray)));
+  
+  // for (integer i = limit; i < sizeof(inputPriceArray); i++) {
+  //   for (integer j = i-limit; j < i; j++) {
+  //     runningTotal += inputPriceArray[j];
+  //   }
+  //   outputPriceArray >> (runningTotal / toFloat(limit));
+  //   runningTotal = 0.0;
+  // }
   return outputPriceArray;
 }
 
@@ -36,13 +39,13 @@ float[] simpleMovingAverage (integer limit, float[] inputPriceArray) {
 float calcMeanOfPeriod (integer periodStart, integer periodEnd, float[] inputPriceArray) {
   float runningTotal = 0.0;
   for (integer i = periodStart; i < periodEnd; i++) {
-    runningTotal += inputPriceArray[i]
+    runningTotal += inputPriceArray[i];
   }
-  return runningTotal / toFloat(period.end-period.start);   // warnning : type case needed
+  return runningTotal / toFloat(periodStart-periodEnd);   // warnning : type case needed
 }
 
 // standard deviation
-float stdev = (integer limit, float[] inputPriceArray) {
+float[] stdev (integer limit, float[] inputPriceArray) {
   float outputStdevArray[];
   for (integer i = 0; i < limit; i++) {
     outputStdevArray >> 0.0;
@@ -52,32 +55,32 @@ float stdev = (integer limit, float[] inputPriceArray) {
     float mean = calcMeanOfPeriod(i-limit, i, inputPriceArray);
 
     // find the sum of the squared differences
-    float squared_differences_sum = 0.0;
+    float squaredDifferencesSum = 0.0;
     for (integer ii = i-limit; ii < i; ii++) {
-      squared_differences_sum += pow(inputPriceArray[ii] - mean, 2);
+      squaredDifferencesSum += pow(inputPriceArray[ii] - mean, toFloat(2));
     }
     // take the mean of the squared differences
-    let mean_of_squared_differences = squared_differences_sum / toFloat(limit);  // warnning : type cast needed
-    outputStdevArray[i] = sqrt(mean_of_squared_differences);
+    float meanOfSquaredDifferences = squaredDifferencesSum / toFloat(limit);  // warnning : type cast needed
+    outputStdevArray[i] = sqrt(meanOfSquaredDifferences);
   }
   return outputStdevArray;
 }
 
-float[] calcBollingerUpperBands = (float[] inputPriceArray, float[] sma, float[] stdev_arr, integer limit) {
+float[] calcBollingerUpperBands (float[] inputPriceArray, float[] sma, float[] stdevArr, integer limit) {
   // bollinger_bands
   float upperBands[];
 
   for (integer x = 0; x < sizeof(inputPriceArray); x++) {
     if (x < limit) {
-      upperBands >> 0.0
+      upperBands >> 0.0;
     } else {
-      upperBands >> (sma[x] + (k*stdev_arr[x]))
+      upperBands >> (sma[x] + (k*stdevArr[x]));
     }
   }
-  return upperBands
+  return upperBands;
 }
 
-float[] calcBollingerLowerBands = (float[] inputPriceArray, float[] sma, float[] stdev_arr, integer limit) {
+float[] calcBollingerLowerBands (float[] inputPriceArray, float[] sma, float[] stdevArr, integer limit) {
   // bollinger_bands
   float lowerBands[];
 
@@ -85,15 +88,47 @@ float[] calcBollingerLowerBands = (float[] inputPriceArray, float[] sma, float[]
     if (x < limit) {
       lowerBands >> 0.0;
     } else {
-      lowerBands >> (sma[x] - (k*stdev_arr[x]));
+      lowerBands >> (sma[x] - (k*stdevArr[x]));
     }
   }
-  return lowerBands
+  return lowerBands;
 }
 
-float inputPriceArray[] = {1.0, 1.1, 1.2, 1.1, 1.5, 1.9, 2.4, 2.7, 2.9, 3.2, 3.5, 3.7, 3.9, 5.0, 3.2, 2.2, 2.3, 2.5, 2.8, 2.9, 3.5, 4.4, 4.3, 4.2, 3.7, 3.5, 4.2, 4.5, 4.8, 5.2, 5.5, 5.7};
+float inputPriceArray[1];//= {1.0, 1.1, 1.2, 1.1, 1.5, 1.9, 2.4, 2.7, 2.9, 3.2, 3.5, 3.7, 3.9, 5.0, 3.2, 2.2, 2.3, 2.5, 2.8, 2.9, 3.5, 4.4, 4.3, 4.2, 3.7, 3.5, 4.2, 4.5, 4.8, 5.2, 5.5, 5.7};
+inputPriceArray[0] = 1.0;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 4.5;
 
+// print(toString(sizeof(inputPriceArray)));
 float sma[] = simpleMovingAverage(n, inputPriceArray);
-float stdev_arr[] = stdev(n, inputPriceArray)
-float bollinger_upper_bands[] = calcBollingerUpperBands(inputPriceArray, sma, stdev_arr, n)
-float bollinger_lower_bands[] = calcBollingerLowerBands(inputPriceArray, sma, stdev_arr, n)
+// float stdevArr[] = stdev(n, inputPriceArray);
+// float bollingerUpperBands[] = calcBollingerUpperBands(inputPriceArray, sma, stdevArr, n);
+// float bollingerLowerBands[] = calcBollingerLowerBands(inputPriceArray, sma, stdevArr, n);
+

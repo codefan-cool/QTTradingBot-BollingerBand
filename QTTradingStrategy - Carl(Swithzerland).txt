@@ -1,0 +1,344 @@
+==============================
+Customer info 
+------------------------- 
+Name : Carl
+Location : Switzerland
+Phone : +385955103000
+Website : https://centrabit.com/
+
+http://t.me/Carl_Lundsrom
+On telegram search box : @Carl_Lundsrom
+
+
+https://t.me/+ktvNmJbnAhk3OTcy
+On telegram search box : Qt Trader Scripts
+
+==============================
+NOV 09, 2022
+C
+Hello Alina, what is your experience of trading algorithms?
+10:15 PM
+Hi nice to meet you.
+10:21 PM
+Please check rececntly my project
+10:21 PM
+https://testreact.tradeasy.tech/
+10:22 PM
+C
+can't register, maybe I don't unerstand Spanish
+10:24 PM
+Okay, then. Anyway I can handle your project perfectly.
+10:25 PM
+C
+The algos should be translated into our language - please have a look at the language documentation
+10:26 PM
+QtPetooh Documentation.pdf
+10:26 PM
+Yes, I have already checked about that.
+10:26 PM
+c, c++, c# is my favorite language and your script looks very similar to them.
+10:27 PM
+C
+we need to have a little library of well known algos that people recognize, so that they quickly can start up building their own variants
+10:28 PM
+Okay, no problem.
+10:29 PM
+C
+did you see our website?
+10:29 PM
+Yes, already. It looks a bit simple, but very useful.
+10:29 PM
+slightly smiling face emoji
+10:29 PM
+C
+never mind the website, I just want you to understand our product - it is a native trading client that you will use and work in. Like Multicharts, Metatrader etc
+10:30 PM
+In fact, I'm a metatrader expert.
+10:31 PM
+Do you know https://trade.mql5.com/?
+10:32 PM
+Trading robot relatives is my major.
+10:32 PM
+C
+now
+10:32 PM
+Of course.
+10:33 PM
+Do you know MQL?
+10:33 PM
+C
+No
+10:33 PM
+Okay then.
+10:33 PM
+C
+https://updates.centrabit.com/internal-testing/
+10:34 PM
+It's a trading script language too
+10:34 PM
+C
+this is the trading client
+10:34 PM
+I have already checked this page
+10:34 PM
+C
+This is a download link.
+10:35 PM
+Good
+10:35 PM
+After install you platform, what should I do?
+10:36 PM
+C
+Tell me that you like it and are ready to accept the job and I will create an exact order
+10:36 PM
+I'm dowinloading your Trader
+10:37 PM
+And I'm ready now
+10:37 PM
+I can start now
+10:39 PM
+C
+ok I will take me 1/2 hour to prepare this - I would very much like if you install the app now. I don't want to hear later that the app doesn't work, and nothing get done.
+10:40 PM
+What do you mean?
+10:40 PM
+C
+That you shold install and confirm to me that it works
+10:40 PM
+with you computer and so on - it is written in Qt and doesn't work everywhere
+10:41 PM
+Before start work, we have to dicuss our schedule.
+10:41 PM
+I don't understand you.
+10:42 PM
+If you build to exe from Qt, it will be executable anywhere.
+10:42 PM
+C
+Not on W8 for example
+10:42 PM
+I'm an expert.
+10:43 PM
+We have to discuss our schedule before start work
+10:43 PM
+C
+of course I will revert with a complete offer for you
+10:43 PM
+You should create the milestone before starting the work.
+10:45 PM
+C
+yes, but I discuss it with you first
+10:45 PM
+Of course, I prefer to work hourly. Is it Okay for you?
+10:46 PM
+C
+That's not what I envisaged but with many milestone maybe that works
+10:46 PM
+Good, so what do you think?
+10:47 PM
+How much are you going to pay for this project?
+10:48 PM
+C
+100 per working algo on average, meaning 1000 for the first batch
+10:48 PM
+EUR
+10:49 PM
+How much do you want per hour?
+10:49 PM
+It depends on the difficulty of the project, usually arount 30USD.
+10:51 PM
+C
+that is ok
+10:52 PM
+If you want, more flexible.
+10:52 PM
+Okay good. slightly smiling face emoji
+10:53 PM
+A cool man or woman?
+10:53 PM
+C
+How about first 3 hours to get acuanted with it and make the first algo, and then everything will go quicker
+10:53 PM
+If I am am man?? Yes all people by the name Carl are men
+10:54 PM
+Good.
+10:54 PM
+Perfect!
+10:54 PM
+C
+I am named after a king who was fighting with Danish and Russian and Polish all his life
+10:54 PM
+But no Azerbadjanis so far :-)
+10:55 PM
+So could you please create the milestone for our first progress?
+10:55 PM
+C
+Yes, will do that
+10:56 PM
+User Avatar
+ChatBot
+Carl created a milestone
+Milestone: 'Project milestone'
+Amount: € 90.00 EUR
+10:59 PM
+Congratulations, your bid has been awarded!
+Click the Accept button below to start working.
+This project has a budget of €1125.00 EUR and you will be charged a project commission of €112.50 EUR on accept.
+Accept
+10:59 PM
+Wonderful, thanks.
+10:59 PM
+Now we can start our project.
+11:00 PM
+First I'll install your platform right now.
+11:00 PM
+C
+1. Download, install and get acquainted with QtTrader, Centrabit's native trading client. First the developer must submit his e-mail so he can be whitelisted in our database.
+https://updates.centrabit.com/internal-testing/
+
+Install demonstrate your first algo.
+
+2. Translate four standard, well-known algos to our C-like script language. Documentation is enclosed which , outlining several time-saving functions that make the job easy. The algos are
+
+a) Bollinger bands
+b) MACD
+c) RSI
+d) Parabolic SAR
+
+Delivery includes algos that work as they should - buy and sell, backtest, plot.
+
+If this goes well, we are going to order at least 6 more algos for the sample algo library that needs to be built up to make it easier for new users to get started.
+11:01 PM
+First progress. QtTrader have been installed.
+11:07 PM
+Screenshot_4.pngScreenshot_4.png
+11:07 PM
+Could you please help me register my account?
+11:55 PM
+Screenshot_6.pngScreenshot_6.png
+11:58 PM
+Screenshot_5.pngScreenshot_5.png
+11:58 PM
+NOV 10, 2022
+I'll translate algos into your script files with skipping registeration.
+12:00 AM
+Hi, are you there now?
+12:04 AM
+C
+hello you have to be whitelisted - give me an e-mail adress
+12:11 AM
+codefan0915@gmail.com
+12:12 AM
+slightly smiling face emoji
+12:12 AM
+C
+Sent it to my tech, one Ukrainian in Los Angeles and one Russian here in Zadar. And and one Ukrainian in Poland and one more in Ukraine
+12:14 AM
+someone shold be awake
+12:15 AM
+Thanks.
+12:15 AM
+Can I call you Mr.Carl?
+12:16 AM
+C
++385955103000
+12:16 AM
+Message removed for violating the Code of Conduct.
+Sorry for dear. You are not allowed to share any contact information.
+12:16 AM
+We should contact only on this chatting box.
+12:17 AM
+Can I call you Mr.Carl again?
+12:20 AM
+C
+Let's talk tomorrow instead I have to go to bed now, flying tomorrow early
+12:20 AM
+Okay, good.
+12:20 AM
+Have a good dream!
+12:21 AM
+C
+haha sure talk tomorrow
+12:22 AM
+wait now you are whitelisted. I wait for you to install
+12:22 AM
+Okay
+12:23 AM
+C
+difficult?
+12:28 AM
+Sorry, I was studying your script. Now I'll check if I'm accepted. slightly smiling face emoji
+12:29 AM
+Good. Now I can do next work. It's very kind of you.
+12:31 AM
+Screenshot_7.pngScreenshot_7.png
+12:31 AM
+Trader is runnin well.
+12:34 AM
+Screenshot_8.pngScreenshot_8.png
+12:34 AM
+C
+Excellent, and behind one menu item you will find the code editor. Goodnight!
+12:39 AM
+I can see "Scripts" button on QT Trader menu. It seems to be the place my script added.
+12:39 AM
+C
+right
+12:39 AM
+Thanks for your kindness. See you tomorrow. slightly smiling face emoji
+12:39 AM
+Happy dream again !
+12:40 AM
+C
+Back at keyboard. Progress today?
+10:37 PM
+Hi, How are you doing today?
+10:49 PM
+Have been working all day. smiley emoji
+10:50 PM
+Do you have any more details about your script?
+10:52 PM
+Any online documentaion url?
+10:53 PM
+I have already started building the "Bollinger Bands", your first strategy, and I'd like you to provide me more helpful documentation for your script language online or offline.
+11:20 PM
+C
+That pdf is the only documentation that we have done, but you can ask Anton anything about the language - it was he who made it
+11:48 PM
+I will send you an invite link to him
+11:49 PM
+Message removed for violating the Code of Conduct.
+NOV 11, 2022
+he works from 10 to midnight European time
+12:10 AM
+Hello Carl, how are you today?
+11:50 AM
+Hello Carl, I have simply converted the Bolinger Bands. It won't run on your Trader yet. I need some help running the script on your Trader.
+6:11 PM
+May I have a word with you?
+6:12 PM
+Hello
+7:07 PM
+Screenshot_9.pngScreenshot_9.png
+8:11 PM
+I need some help from Anton
+8:11 PM
+NOV 12, 2022
+C
+I posted an invite link to you so that you can chat with him and the other tech-guys. But Freelancer removed it... I don't know how to get past this.
+12:57 AM
+I dropped the screenshot in the chat
+1:00 AM
+goodnight
+1:02 AM
+Answer from Anton: "tell her do not use underscores in functions and variables names"
+1:04 AM
+How are you today?
+6:22 AM
+Could you please show my script to him? I think we need to see urgently on this chatting box. When will it be convenient for you? I'm flexible for that.
+6:26 AM
+C
+sure, post i there and I will be your letter-pidgeon!
+10:54 PM
+I mean post it here!
+10:55 PM
+What times do you work?

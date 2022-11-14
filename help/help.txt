@@ -1,0 +1,40 @@
+
+QtTrader is a developent from the open-source trading client Qt Bitcoin Trader (which was also written by us). It can trade on several external exchanges an on Centrabit Exchange.
+
+Centrabit Exchange is our own exchange, which can only be reached via Centrabit Trader.
+
+A) The user experience of algo-trading with Centrabit Trader
+===============================================================
+1. Pick a currency cross, an exchange and a strategy template
+2. Make some settings in the temlplate and plot a backtest with historical data. If it looks promising -
+3. Change parameters, for example length of moving averages. Plot again to find the settings with optimum $ result
+      --"--
+4. Deposit money and run the script live with small amounts
+5. If the performance continues to be good, increase amounts.
+
+B) Bar generation function
+==============================================================
+Trading functions are in a file called library.csh. The the scripts themselves (samples, examples and actual scripts written by users) are in files ending with .csc. That way users can develop not only their own scripts but also their own trading functions that are called by the scripts.
+
+Since the app will trade not only on our own exchange but also on several others with API that we don't control, our functions library has to contain tasks that, in other apps, would be done on server-side.
+- Scripts refer to bars, which are segments of historic transactions. The dividing up of transactions into bars is made in several ways, the two basic ones are these:
+--- Time bars (the transactions during for ex. one minute)
+--- Volume bars (the transactions whose total value is a set amount)
+In library.csh, all types of bars that scripts can refer to are defined.
+
+When generating bars, the function must check for historical transactions locally before requesting them from server. When a script refers to the history of BTC/USDT, for example 1000 volume bars of 1 BTC back in time, it must
+1. If there are BTC/USDT transactions on local disk, it should download the missing transactions from the newest on disk until now.
+2. When transactions are updated until now, it should add the volumes (since it is making volume bars) of the transactions on disk from now and back until when 1000 BTC is reached (1000 bars * 1 BTC). If the transactions on disk don't add up to 1000 BTC, more is downladed (older than the oldest one on disk).
+3. After downloading for example n transactions, check again if volumes now add up to 1000 BTC. Download more until disk contains enough transactions for total volume of >1000 BTC.
+4. Download new transaction (from the latest transaction on disk to now) every n seconds.
+5. When enough transactions are on disk, create and store the bars.
+- The basic format is OHLC, open, high, low and close prices. A time stamp for each of these four transactions plus a total value of all transactions included in the bar.
+- If, in a time bar, there is not four transactions to refer to, the latest transaction price is just copied forward to the next bar.
+- If, in a volume bar, one transaction is larger than the bar resolution (in the above example 1 BTC), consecutive, identical bars with same price for OHLC and are written, with one ms "synthetic" time difference.
+- After each download of transaction (n seconds) check if another bar can be be created.
+  
+These bar repositories on disk are separate depending not only on cross and type but also on source (exchange). That way that traders can back-test arbitrage algos.
+
+C) Other trading functions
+=====================================================================
+"Indicators" are different ways of plotting price and volume action on the chart. Anton has prepared several that are descripbed in the Indicators.pdf.

@@ -1,0 +1,73 @@
+
+/*
+* Bollinger Bands consist of an N-period moving average (MA),
+* an upper band at K times an N-period standard deviation above the moving average (MA + Kσ),
+* and a lower band at K times an N-period standard deviation below the moving average (MA − Kσ).
+*/
+
+script BollingerBands; // a name of a file must be unique within all the files included to the main script
+
+import Math;
+import IO;
+
+float k = 2.0;
+integer n = 20;
+
+// simple moving average
+float[] simpleMovingAverage (integer limit, float[] inputPriceArray) {
+ float runningTotal = 0.0;
+ float outputPriceArray[];
+
+ // populate initial values in outputPriceArray at index 0 - limit to null
+ outputPriceArray[0] = 0.0;
+ // for (integer i = 0; i < limit; i++) {
+ //   outputPriceArray >> 0.0;
+ // } 
+ print(toString(sizeof(inputPriceArray)));
+ 
+ // for (integer i = limit; i < sizeof(inputPriceArray); i++) {
+ //   for (integer j = i-limit; j < i; j++) {
+ //     runningTotal += inputPriceArray[j];
+ //   }
+ //   outputPriceArray >> (runningTotal / toFloat(limit));
+ //   runningTotal = 0.0;
+ // }
+ return outputPriceArray;
+}
+
+float inputPriceArray[1];//= {1.0, 1.1, 1.2, 1.1, 1.5, 1.9, 2.4, 2.7, 2.9, 3.2, 3.5, 3.7, 3.9, 5.0, 3.2, 2.2, 2.3, 2.5, 2.8, 2.9, 3.5, 4.4, 4.3, 4.2, 3.7, 3.5, 4.2, 4.5, 4.8, 5.2, 5.5, 5.7};
+inputPriceArray[0] = 1.0;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.2;
+inputPriceArray >> 1.1;
+inputPriceArray >> 1.5;
+inputPriceArray >> 2.7;
+inputPriceArray >> 3.0;
+inputPriceArray >> 3.9;
+inputPriceArray >> 4.5;
+
+// print(toString(sizeof(inputPriceArray)));
+float sma[] = simpleMovingAverage(n, inputPriceArray);
+
+
